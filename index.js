@@ -77,12 +77,12 @@ const iceReducer = (state = initialIceState, action) => {
       return state;
   }
 };
-const rooReducer = redux.combineReducers({
+const rootReducer = redux.combineReducers({
   cake: cakeReducer,
   icecream:iceReducer
 })
 
-const store = redux.createStore(rooReducer,applyMiddleware(logger));
+const store = redux.createStore(rootReducer,applyMiddleware(logger));
 console.log("initial state", store.getState());
 const unsubscribe = store.subscribe(() =>{});
 store.dispatch(buyCake());
